@@ -1,15 +1,10 @@
-import java.util.*;
+import java.util.stream.IntStream;
 
 class Solution {
-    public List<Integer> solution(int n) {
-        List<Integer> answer = new ArrayList<>();
+    public int[] solution(int n) {
         
-        for(int i=1; i<=n; i++){
-            if(i%2 == 1)
-                answer.add(i);
-        }
-        
-        
-        return answer;
+        return IntStream.rangeClosed(0, n)
+            .filter(value -> value % 2 == 1)
+            .toArray();
     }
 }
