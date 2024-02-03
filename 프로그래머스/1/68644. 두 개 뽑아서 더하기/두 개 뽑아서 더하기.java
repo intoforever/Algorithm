@@ -5,9 +5,9 @@ class Solution {
         
         Set<Integer> r = new TreeSet<>();
         
-        for(int i=0; i<numbers.length; i++){
-            for(int j=0; j<numbers.length; j++){
-                if(i!=j)  r.add(numbers[i]+numbers[j]);        
+        for(int i=0; i<numbers.length-1; i++){
+            for(int j=i+1; j<numbers.length; j++){
+                r.add(numbers[i]+numbers[j]);        
             }
         }
         
