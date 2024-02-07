@@ -1,15 +1,29 @@
 import java.util.*;
+import java.io.*;
 public class Main{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int nums, a, b;
-        nums = sc.nextInt();
-        
-        for(int i=0; i<nums; i++){
-            a = sc.nextInt();
-            b = sc.nextInt();
+        try(
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        ){
+            int nums, a, b;
+            String temp;
+            String[] arr;
             
-            System.out.printf("Case #%d: %d\n", i+1, a+b);
+            nums = Integer.parseInt(br.readLine());
+            for(int i=0; i<nums; i++){
+                temp = br.readLine();
+                arr = temp.split(" ");
+                a = Integer.parseInt(arr[0]);
+                b = Integer.parseInt(arr[1]);
+            
+                System.out.printf("Case #%d: %d\n", i+1, a+b);
+            }
+            bw.flush();
+            bw.close();
+            br.close();
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }//main ends
 }//class ends
