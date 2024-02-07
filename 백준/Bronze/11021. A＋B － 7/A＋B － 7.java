@@ -17,7 +17,7 @@ public class Main{
                 a = Integer.parseInt(arr[0]);
                 b = Integer.parseInt(arr[1]);
             
-                System.out.printf("Case #%d: %d\n", i+1, a+b);
+                bw.write("Case #" + (i+1) + ": " + (a+b) + "\n");
             }
             bw.flush();
             bw.close();
