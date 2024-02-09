@@ -3,14 +3,22 @@ class Solution {
         String[] arr = control.split("");
         
         for(String a:arr){
-            if(a.equals("w"))
+            if(a.equals("w")){
                 n += 1;
-            else if(a.equals("s"))
+                continue;
+            }
+            else if(a.equals("s")){
                 n -= 1;
-            else if(a.equals("d"))
+                continue;
+            }
+            else if(a.equals("d")){
                 n += 10;
-            else if(a.equals("a"))
+                continue;
+            }
+            else if(a.equals("a")){
                 n -= 10;
+                continue;
+            }
         }
         
         return n;
