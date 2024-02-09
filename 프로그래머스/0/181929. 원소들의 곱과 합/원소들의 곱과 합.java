@@ -2,16 +2,15 @@ class Solution {
     public int solution(int[] num_list) {
         int answer = 0;
         int multiple = 1;
-        int plus = 0;
+        int sum = 0;
         
         for(int n:num_list){
             multiple *= n;
-            plus += n;
-            System.out.println(multiple);
-            System.out.println(plus);
+            sum += n;
         }
         
-        if(multiple < plus*plus)
+        sum = sum*sum;
+        if(multiple < sum)
             answer = 1;
             
         return answer;
