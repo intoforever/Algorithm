@@ -1,18 +1,17 @@
-import java.util.*;
-
 class Solution {
-    public String solution(String my_string) {
-        StringBuilder sb = new StringBuilder();
-        char[] arr = my_string.toCharArray();
-        
-        for(char a:arr){
-            if(Character.isUpperCase(a))
-                sb.append(String.valueOf(a).toLowerCase());
-            else
-                sb.append(String.valueOf(a).toUpperCase());
+    public String solution(String s) {
+        String answer = "";
+
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)>=97 && s.charAt(i)<=122){
+                answer += (char)(s.charAt(i)-32);
+            } else if(s.charAt(i)>=65 && s.charAt(i)<=90){
+                answer += (char)(s.charAt(i)+32);
+            } else {
+                answer += s.charAt(i);
+            }
         }
-        
-        String answer = sb.toString();
+
         return answer;
     }
 }
