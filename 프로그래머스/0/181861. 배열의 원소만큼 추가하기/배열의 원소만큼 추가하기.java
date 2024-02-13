@@ -1,15 +1,17 @@
 import java.util.*;
 
 class Solution {
-    public Integer[] solution(int[] arr) {
+    public int[] solution(int[] arr) {
         List<Integer> list = new ArrayList<>();
         
         for(int a:arr)
             for(int i=0; i<a; i++)
                 list.add(a);
         
+        int[] answer = new int[list.size()];
+        for(int i=0; i<list.size(); i++)
+            answer[i] = list.get(i);
         
-        Integer[] answer = list.toArray(new Integer[0]);
         return answer;
     }
 }
