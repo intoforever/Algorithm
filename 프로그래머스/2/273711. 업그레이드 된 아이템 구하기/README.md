@@ -1,6 +1,6 @@
 # [level 2] 업그레이드 된 아이템 구하기 - 273711 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/273711?language=mysql) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/273711) 
 
 ### 성능 요약
 
@@ -12,11 +12,11 @@
 
 ### 채점결과
 
-합계: 100.0 / 100.0<br/>합계: 100.0 / 100.0
+합계: 100.0 / 100.0
 
 ### 제출 일자
 
-2024년 2월 0일 23:31:0
+2024년 2월 0일 23:35:53
 
 ### 문제 설명
 
