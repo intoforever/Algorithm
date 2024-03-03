@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 
 public class Main{
     public static void main(String[] args){
@@ -25,22 +26,32 @@ public class Main{
                 // 줄 읽고 바꿀 바구니 지정
                 String[] line = br.readLine().split(" ");
                 int temp;
-                int basket1 = Integer.parseInt(line[0])-1;
-                int basket2 = Integer.parseInt(line[1])-1;
-                
-                temp = basket[basket1];
-                basket[basket1] = basket[basket2];
-                basket[basket2] = temp;
+                int a = Integer.parseInt(line[0])-1;
+                int b = Integer.parseInt(line[1])-1;
+                            
+                swap(a,b,basket);
             }
             
             // 출력하기
+            StringBuilder sb = new StringBuilder();
             for(int b:basket){
-                bw.write(b + " ");    
+                sb.append(b).append(" ");
             }
+            
+            bw.write(sb.toString());
             
         }catch(Exception e){
             e.printStackTrace();
         }
         
     }//main ends
+    
+    // 값 바꾸는 함수 정의
+    public static void swap(int a, int b, int[] arr){
+        int temp;
+        temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }//swap ends
+    
 }//class ends
