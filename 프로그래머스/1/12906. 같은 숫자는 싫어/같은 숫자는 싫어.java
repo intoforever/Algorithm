@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Solution {
-    public int[] solution(int []arr) {
+    public List<Integer> solution(int []arr) {
         
         // 리스트 생성
         List<Integer> list = new ArrayList<>();
@@ -20,12 +20,12 @@ public class Solution {
             prev = next;
         }
         
-        int[] answer = new int[list.size()];
+//         int[] answer = new int[list.size()];
         
-        for(int i=0; i<answer.length; i++){
-            answer[i] = list.get(i);
-        }
+//         for(int i=0; i<answer.length; i++){
+//             answer[i] = list.get(i);
+//         }
         
-        return answer;
+        return list;
     }
 }
