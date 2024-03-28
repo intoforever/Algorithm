@@ -24,15 +24,8 @@ public class Main {
             }
             
             // 출력
-            int idx0 = Integer.parseInt(studentList.get(0));
-            int idx1 = Integer.parseInt(studentList.get(1));
-            if (idx0 > idx1) {
-                bw.write(studentList.get(1)+"\n");
-                bw.write(studentList.get(0)+"\n");
-            } else {
-                bw.write(studentList.get(0)+"\n");
-                bw.write(studentList.get(1)+"\n");
-            }
+            bw.write(studentList.get(0)+"\n");
+            bw.write(studentList.get(1)+"\n");
 
         } catch (Exception e){
             e.printStackTrace();
