@@ -1,10 +1,10 @@
 # [level 0] 가위 바위 보 - 120839 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839?language=javascript) 
 
 ### 성능 요약
 
-메모리: 73.5 MB, 시간: 0.49 ms
+메모리: 33.5 MB, 시간: 0.14 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 2월 5일 23:52:25
+2024년 04월 04일 23:54:55
 
 ### 문제 설명
 
