@@ -25,16 +25,14 @@ public class Main  {
                 int i = Integer.parseInt(line[0])-1;
                 int j = Integer.parseInt(line[1])-1;
                 
-                if (i != j && j != 0){                
+                if (j != i && j != 0){                
                     // 반복횟수 구하기
                     int count = (j-i) / 2 + 1;
-                    int num = 0;
-                    for (int l=0; l<count; l++) {
+                    for (int start=i, end=j; i<j; i++, j--) {
                         int temp;
-                        temp = basketList[i+num];
-                        basketList[i+num] = basketList[j-num];
-                        basketList[j-num] = temp;
-                        num++;
+                        temp = basketList[i];
+                        basketList[i] = basketList[j];
+                        basketList[j] = temp;
                     }
                 }
             }
