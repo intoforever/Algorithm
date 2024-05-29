@@ -1,24 +1,16 @@
 function solution(hp) {
     var answer = 0;
+    var leftover = hp;
+    var general = 5;
+    var army = 3;
+    var worker = 1;
     
-    var a = 5;
-    var b = 3;
-    var c = 1;
+    var array = [general, army, worker];
     
-    var leftover;
-    
-    answer = Math.trunc(hp/a);
-    console.log(answer);
-    leftover = hp%a;
-    console.log(leftover);
-    
-    answer = answer + Math.trunc(leftover/b);
-    console.log(answer);
-    leftover = leftover%b;
-    console.log(leftover);
-    
-    answer = answer + Math.trunc(leftover/c);
-        
+    for (var a of array) {
+        answer += Math.trunc(leftover/a);
+        leftover %= a;
+    }
     
     return answer;
 }
