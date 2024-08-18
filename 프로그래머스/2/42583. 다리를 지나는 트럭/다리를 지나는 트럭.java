@@ -29,7 +29,6 @@ class Solution {
             // 트럭 드루간다~~
             int waitTruck = pendingQueue.peekFirst()==null? 0:pendingQueue.peekFirst();
             // Integer waitTruck = pendingQueue.pollFirst();
-            // System.out.println("currentWeight+waitTruck : " + (currentWeight+waitTruck));
             if (currentWeight+waitTruck <= weight && waitTruck != 0) {
                 processingQueue.addLast(pendingQueue.pollFirst()); // 대기큐에서 첫번째꺼 빼서 진행큐 마지막에 넣고    
             } else {
