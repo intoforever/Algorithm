@@ -1,47 +1,56 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        int n = 0;
-        int[] ret = new int[commands.length];
-
-        while(n < commands.length){
-            int m = commands[n][1] - commands[n][0] + 1;
-
-            if(m == 1){
-                ret[n] = array[commands[n++][0]-1];
-                continue;
-            }
-
-            int[] a = new int[m];
-            int j = 0;
-            for(int i = commands[n][0]-1; i < commands[n][1]; i++)
-                a[j++] = array[i];
-
-            sort(a, 0, m-1);
-
-            ret[n] = a[commands[n++][2]-1];
+        // answer 배열 초기화
+        int cLen = commands.length;
+        int[] answer = new int[cLen];
+        
+        // k번째 값
+        int kValue = -1;
+        
+        // 탐색
+        for (int z = 0; z < cLen; z++) {
+            int[] com = commands[z];
+            kValue = getKValue(array, com); // 정렬 포함
+            
+            answer[z] = kValue;
         }
-
-        return ret;
+        
+        // 결과 반환
+        return answer;
     }
-
-    void sort(int[] a, int left, int right){
-        int pl = left;
-        int pr = right;
-        int x = a[(pl+pr)/2];
-
-        do{
-            while(a[pl] < x) pl++;
-            while(a[pr] > x) pr--;
-            if(pl <= pr){
-                int temp = a[pl];
-                a[pl] = a[pr];
-                a[pr] = temp;
-                pl++;
-                pr--;
+    
+    /*
+     * k번째 value를 구하는 함수
+     */
+    private int getKValue(int[] array, int[] command) {
+        // idx 구하기
+        int i = command[0] - 1;
+        int j = command[1]; // copyOfRange를 쓰기 위해 -1 안함, 자동 제외
+        int k = command[2] - 1;
+        int val = -1; // array의 각 요소는 1 이상, 구분
+        
+        // 새 배열
+        int[] temp = Arrays.copyOfRange(array, i, j);
+        
+        // 정렬
+        int tLen = temp.length;
+        for (int a = 0; a < tLen; a++) {
+            int min = temp[a];
+            
+            for (int b = a + 1; b < tLen; b++) {
+                if (min > temp[b]) {
+                    temp[a] = temp[b];
+                    temp[b] = min;
+                    min = temp[a];
+                }
             }
-        }while(pl <= pr);
-
-        if(left < pr) sort(a, left, pr);
-        if(right > pl) sort(a, pl, right);
+        }
+        
+        // k번째 값
+        val = temp[k];
+        
+        return val;
     }
 }
