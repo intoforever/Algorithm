@@ -4,11 +4,7 @@ class Solution {
     public boolean solution(String[] phone_book) {
         HashMap<String,Integer> map = new HashMap<>();
         for (String num : phone_book){
-            if (!map.containsKey(num)){
-                map.put(num, 0);
-            } else{
-                return false;
-            }
+            map.put(num, 0);
         }
 
         for (String phone : phone_book){
