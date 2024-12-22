@@ -1,31 +1,14 @@
 class Solution {
     public String solution(String s) {
-        String answer = "";
         String[] stringArr = s.split(" ");
-        int len = stringArr.length;
-        int[] intArr = new int[len];
+        int min, max;
+        min = max = Integer.parseInt(stringArr[0]);
         
-        for (int i = 0; i < len; i++) {
-            intArr[i] = Integer.parseInt(stringArr[i]);
-        }
-        
-        int min = intArr[0];
-        int max = intArr[0];
-        
-        for (int i = 1; i < len; i++) {
-            int num = intArr[i];
+        for (int i = 0; i < stringArr.length; i++) {
+            int num = Integer.parseInt(stringArr[i]);
             
-            if (min > num) {
-                int temp = min;
-                min = num;
-                num = temp;
-            }
-            
-            if (max < num) {
-                int temp = max;
-                max = num;
-                num = temp;
-            }
+            if (min > num) min = num;
+            if (max < num) max = num;
         }
         
         StringBuilder sb = new StringBuilder();
@@ -33,8 +16,6 @@ class Solution {
         sb.append(" ");
         sb.append(max);
         
-        answer = sb.toString();
-        
-        return answer;
+        return sb.toString();
     }
 }
