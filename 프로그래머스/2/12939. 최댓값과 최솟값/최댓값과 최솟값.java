@@ -1,6 +1,13 @@
 class Solution {
+    
     public String solution(String s) {
-        String[] stringArr = s.split(" ");
+        String answer = getMinMaxValue(s);
+        
+        return answer;
+    } // main ends
+    
+    private String getMinMaxValue(String s) {
+                String[] stringArr = s.split(" ");
         int min, max;
         min = max = Integer.parseInt(stringArr[0]);
         
@@ -18,4 +25,5 @@ class Solution {
         
         return sb.toString();
     }
-}
+    
+} // class ends
