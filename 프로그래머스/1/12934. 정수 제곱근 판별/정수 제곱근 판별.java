@@ -1,7 +1,7 @@
 class Solution {
     public long solution(long n) {
         long answer = 0;
-        double result = Math.sqrt((double) n);
+        double result = Math.sqrt(n);
         
         if (isInteger(result)) {
             result = result + 1;
