@@ -8,21 +8,14 @@ class Solution {
             prev = curr;
             curr = numLog[i];
             
-            switch (curr - prev) {
-                case 1:
-                    sb.append("w");
-                    break;
-                case -1:
-                    sb.append("s");
-                    break;
-                case 10:
-                    sb.append("d");
-                    break;
-                case -10:
-                    sb.append("a");
-                    break;
-                default:
-                    break;
+            if (curr == prev + 1) {
+                sb.append("w");
+            } else if (curr == prev - 1) {
+                sb.append("s");
+            } else if (curr == prev + 10) {
+                sb.append("d");
+            } else if (curr == prev - 10) {
+                sb.append("a");
             }
         }
         
