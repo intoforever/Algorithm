@@ -1,15 +1,23 @@
 import java.util.*;
 
 class Solution {
-    public List<Integer> solution(int n) {
-        List<Integer> list = new ArrayList<>();
+    public int[] solution(int n) {
+        int nums = 0;
         
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
-                list.add(i);
+                nums++;
             }
         }
         
-        return list;
+        int[] answer = new int[nums];
+        nums = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                answer[nums++] = i;
+            }
+        }
+        
+        return answer;
     }
 }
