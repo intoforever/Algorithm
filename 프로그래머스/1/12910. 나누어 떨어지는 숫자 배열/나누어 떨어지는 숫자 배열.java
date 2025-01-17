@@ -2,22 +2,10 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        int cnt = 0;
-        List<Integer> list = new ArrayList<>();
+        int[] answer = Arrays.stream(arr).filter(factor -> factor % divisor == 0).toArray();
         
-        for (int a : arr) {
-            if (a % divisor != 0) {
-                continue;
-            }
-            
-            cnt++;
-            list.add(a);
-        }
-        
-        int[] answer = {-1};
-        
-        if (cnt != 0) {
-            answer = list.stream().mapToInt(Integer::intValue).toArray();
+        if(answer.length == 0) {
+            answer = new int[] {-1};
         }
         
         Arrays.sort(answer);
