@@ -3,7 +3,7 @@ class Solution {
         int answer = 0;
         long num2 = num;
         
-        while (num2 != 1 && answer != 500) {
+        while (num2 != 1 && answer < 500) {
             if (num2 % 2 == 0) {
                 num2 /= 2;
             } else {
