@@ -1,9 +1,20 @@
 class Solution {
     public int solution(int[] numbers) {
-        int sum = 45;
-        for (int i : numbers) {
-            sum -= i;
+        int answer = 0;
+        boolean[] check = new boolean[10];
+        
+        for (int n : numbers) {
+            check[n] = true;
         }
-        return sum;
+        
+        for (int i = 0 ; i < check.length; i++) {
+            if (check[i] == true) {
+                continue;
+            }
+            
+            answer += i;
+        }
+        
+        return answer;
     }
 }
