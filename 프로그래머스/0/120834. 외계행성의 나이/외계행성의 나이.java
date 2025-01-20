@@ -1,16 +1,12 @@
 class Solution {
     public String solution(int age) {
-        String str = String.valueOf(age);
-        String[] arr = str.split("");
         StringBuilder sb = new StringBuilder();
-        
+        char[] arr = String.valueOf(age).toCharArray();
         int len = arr.length;
         
-        char[] charArr = new char[len];
-        
         for (int i = 0; i < len; i++) {
-            charArr[i] = (char) (97 + Integer.parseInt(arr[i]));
-            sb.append(String.valueOf(charArr[i]));
+            char val = (char)((arr[i] - '0') + 'a');
+            sb.append(String.valueOf(val));
         }
         
         return sb.toString();
