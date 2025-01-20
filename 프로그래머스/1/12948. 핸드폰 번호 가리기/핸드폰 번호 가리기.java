@@ -7,13 +7,12 @@ class Solution {
         }
             
         StringBuilder sb = new StringBuilder();
-        String[] arr = phone_number.split("");
         
         for (int i = 0; i < len; i++) {
             if (i <= len - 5) {
                 sb.append("*");
             } else {
-                sb.append(arr[i]);
+                sb.append(phone_number.charAt(i));
             }
         }
         
