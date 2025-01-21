@@ -1,22 +1,14 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int[] numbers, String direction) {
-        Deque<Integer> q = new LinkedList<>();
-        int target = 0;
-        
-        for (int n : numbers) {
-            q.add(n);
-        }
-        
-        if ("right".equals(direction)) {
-            target = q.pollLast();
-            q.offerFirst(target);
-        } else {
-            target = q.pollFirst();
-            q.offerLast(target);
-        }
-        
-        return q.stream().mapToInt(Integer::intValue).toArray();
+
+        int length = numbers.length;
+        int[] answer = new int[length];
+
+        int direct = "right".equals(direction) ? 1 : -1;
+
+        for (int i = 0; i < length; i++)
+            answer[i] = numbers[(i - direct + length) % length];
+
+        return answer;
     }
 }
