@@ -1,5 +1,10 @@
 class Solution {
     public int solution(int num, int k) {
-        return ("-" + num).indexOf(String.valueOf(k));
+        String numStr = String.valueOf(num);
+        String kStr = String.valueOf(k);
+
+        int answer = numStr.indexOf(kStr);
+        
+        return answer < 0 ? answer : answer + 1 ;
     }
 }
