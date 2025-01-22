@@ -1,29 +1,26 @@
 class Solution {
-    
     public String solution(String s) {
-        String answer = getMinMaxValue(s);
+        StringBuilder sb = new StringBuilder();
+        String[] arr = s.split(" ");
+        int min = Integer.parseInt(arr[0]);
+        int max = Integer.parseInt(arr[0]);
         
-        return answer;
-    } // main ends
-    
-    private String getMinMaxValue(String s) {
-                String[] stringArr = s.split(" ");
-        int min, max;
-        min = max = Integer.parseInt(stringArr[0]);
-        
-        for (int i = 0; i < stringArr.length; i++) {
-            int num = Integer.parseInt(stringArr[i]);
+        for (String a : arr) {
+            int num = Integer.parseInt(a);
             
-            if (min > num) min = num;
-            if (max < num) max = num;
+            if (min > num) {
+                min = num;
+            }
+            
+            if (max < num) {
+                max = num;
+            }
         }
         
-        StringBuilder sb = new StringBuilder();
         sb.append(min);
         sb.append(" ");
         sb.append(max);
         
         return sb.toString();
     }
-    
-} // class ends
+}
