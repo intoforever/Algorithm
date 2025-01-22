@@ -1,15 +1,14 @@
 class Solution {
     public int solution(int order) {
         int answer = 0;
-        char[] arr = String.valueOf(order).toCharArray();
-        
-        for (char a : arr) {
-            int num = a - '0';
-            if (num != 0 && num % 3 == 0) {
-                answer++;
-            }
+
+        String str = order+"";
+
+        for(int i=0; i<str.length(); i++){
+            char c = str.charAt(i);
+            if(c=='3'||c=='6'||c=='9') answer++;
         }
-        
+
         return answer;
     }
 }
