@@ -1,26 +1,20 @@
+import java.util.*;
+
 class Solution {
     public String solution(String s) {
-        StringBuilder sb = new StringBuilder();
-        String[] arr = s.split(" ");
-        int min = Integer.parseInt(arr[0]);
-        int max = Integer.parseInt(arr[0]);
-        
-        for (String a : arr) {
-            int num = Integer.parseInt(a);
-            
-            if (min > num) {
-                min = num;
-            }
-            
-            if (max < num) {
-                max = num;
-            }
+        String[] arrStr = s.split(" ");
+        int[] arrInt = new int[arrStr.length];
+        int i=0;
+        for(String part : arrStr){
+          arrInt[i] = Integer.parseInt(part);
+          i++;
         }
-        
-        sb.append(min);
+
+        StringBuffer sb = new StringBuffer();
+        sb.append(Arrays.stream(arrInt).min().getAsInt());
         sb.append(" ");
-        sb.append(max);
-        
+        sb.append(Arrays.stream(arrInt).max().getAsInt());
+
         return sb.toString();
     }
 }
