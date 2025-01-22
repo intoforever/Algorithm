@@ -4,12 +4,8 @@ class Solution {
         char[] arr = String.valueOf(order).toCharArray();
         
         for (char a : arr) {
-            if ((a - '0') == 0) {
-                continue;
-            }
-            
-            if ((a - '0') % 3 == 0) {
-                System.out.println("a: " + a + ", a - 0: " + (a - '0') + ", %3 == 0: " + ((a - '0') % 3));
+            int num = a - '0';
+            if (num != 0 && num % 3 == 0) {
                 answer++;
             }
         }
