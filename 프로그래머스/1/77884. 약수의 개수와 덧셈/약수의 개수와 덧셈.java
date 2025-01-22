@@ -3,11 +3,10 @@ class Solution {
         int answer = 0;
         int len = right - left + 1;
         
-        for (int i = 0, value = left; i < len; i++) {
-            int delimiter = getDelimiter(value); // 1 or -1
+        for (; left <= right; left++) {
+            int delimiter = getDelimiter(left); // 1 or -1
             
-            answer += value * delimiter;
-            value++;
+            answer += left * delimiter;
         }        
         
         return answer;
