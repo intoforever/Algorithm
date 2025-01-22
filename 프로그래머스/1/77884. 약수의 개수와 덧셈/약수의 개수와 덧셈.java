@@ -4,7 +4,7 @@ class Solution {
         int len = right - left + 1;
         
         for (int i = 0, value = left; i < len; i++) {
-            int delimiter = getValue(value) % 2 == 0 ? 1 : -1;
+            int delimiter = getDelimiter(value); // 1 or -1
             
             answer += value++ * delimiter;
         }        
@@ -12,7 +12,7 @@ class Solution {
         return answer;
     }
     
-    private int getValue(int value) {
+    private int getDelimiter(int value) {
         int cnt = 0;
         
         for (int i = 1; i <= value; i++) {
@@ -21,6 +21,6 @@ class Solution {
             }
         }
         
-        return cnt;
+        return cnt % 2 == 0 ? 1 : -1;
     }
 }
