@@ -6,7 +6,8 @@ class Solution {
         for (int i = 0, value = left; i < len; i++) {
             int delimiter = getDelimiter(value); // 1 or -1
             
-            answer += value++ * delimiter;
+            answer += value * delimiter;
+            value++;
         }        
         
         return answer;
