@@ -4,6 +4,6 @@ class Solution {
         long totalFee = price * sum;
         long changes = money - totalFee;
         
-        return changes < 0 ? -changes : 0;
+        return Math.max(0, -1 * changes);
     }
 }
