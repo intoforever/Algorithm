@@ -4,14 +4,13 @@ class Solution {
             return false;
         }
         
-        for (char a : s.toCharArray()) {
-            boolean result = a - '0' < 10;
-
-            if (!result) {
-                return false;
-            }
+        try {
+            Integer.parseInt(s);
+            return true;
+            
+        } catch (Exception e) {
+            return false;
+            
         }
-        
-        return true;
     }
 }
