@@ -1,13 +1,9 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long sum = 0;
-        long changes = 0;
+        long sum = count * (count + 1) / 2;
+        long totalFee = price * sum;
+        long changes = money - totalFee;
         
-        for (int i = 1; i <= count; i++) {
-            sum += i;
-        }
-        
-        changes = money - (price * sum);
-        return changes < 0 ? -1L * changes : 0;
+        return changes < 0 ? -changes : 0;
     }
 }
