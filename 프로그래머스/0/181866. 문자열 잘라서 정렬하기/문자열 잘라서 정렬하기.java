@@ -2,17 +2,7 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myString) {
-        StringBuilder sb = new StringBuilder();
-        
-        for (String s : myString.split("")) {
-            if (" ".equals(s)) {
-                continue;
-            }
-            
-            sb.append(s);
-        }
-        
-        String[] strArr = sb.toString().split("x");
+        String[] strArr = myString.split("x");
         List<String> list = new ArrayList<>();
         
         for (String str : strArr) {
@@ -20,7 +10,7 @@ class Solution {
                 continue;
             }
             
-            list.add(str);
+            list.add(str.replace(" ", ""));
         }
         
         String[] answer = list.stream().toArray(String[]::new);
