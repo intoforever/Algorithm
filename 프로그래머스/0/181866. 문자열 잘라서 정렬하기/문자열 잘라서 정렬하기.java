@@ -2,20 +2,24 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myString) {
-        String[] arr = myString.split("x");
-        List<String> list = new ArrayList<>();
-        
-        for (int i = 0; i < arr.length; i++) {
-            String str = arr[i].replace(" ", "");
-            
-            if (!"".equals(arr[i])) {
-                list.add(str);
+        String[] answer = {};
+        String[] split = myString.split("x");
+        ArrayList <String> al = new ArrayList <> ();
+
+        for(int i = 0; i < split.length; i ++){
+            if(!split[i].equals("")){
+                al.add(split[i]);
             }
+
         }
-        
-        String[] answer = list.stream().toArray(String[]::new);
+
+        answer = new String [al.size()];
+        for(int i = 0; i < al.size(); i ++){
+            answer[i] = al.get(i);
+        }
         Arrays.sort(answer);
-        
+
+
         return answer;
     }
 }
