@@ -2,10 +2,9 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myString) {
-        String[] strArr = myString.split("x");
         List<String> list = new ArrayList<>();
         
-        for (String str : strArr) {
+        for (String str : myString.split("x")) {
             if ("".equals(str)) {
                 continue;
             }
