@@ -3,27 +3,17 @@ import java.util.*;
 class Solution {
     public String[] solution(String myString) {
         String[] arr = myString.split("x");
-        int cnt = 0;
+        List<String> list = new ArrayList<>();
         
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = arr[i].replace(" ", "");
+            String str = arr[i].replace(" ", "");
             
             if (!"".equals(arr[i])) {
-                cnt++;
+                list.add(str);
             }
         }
         
-        String[] answer = new String[cnt];
-        int idx = 0;
-        
-        for (int i = 0; i < arr.length; i++) {
-            if ("".equals(arr[i])) {
-                continue;
-            }
-            
-            answer[idx++] = arr[i];
-        }
-        
+        String[] answer = list.stream().toArray(String[]::new);
         Arrays.sort(answer);
         
         return answer;
