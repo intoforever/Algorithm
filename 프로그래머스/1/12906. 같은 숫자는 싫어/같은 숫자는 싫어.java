@@ -6,15 +6,7 @@ public class Solution {
         Stack<Integer> stack = new Stack<>();
         
         for (int a : arr) {
-            // 첫번째 값 저장
-            if (stack.isEmpty()) {
-                stack.push(a);
-                continue;
-            }
-            
-            int value = stack.peek();
-            
-            if (a != value) {
+            if (stack.isEmpty() || stack.peek() != a) {
                 stack.push(a);
             }
         }
