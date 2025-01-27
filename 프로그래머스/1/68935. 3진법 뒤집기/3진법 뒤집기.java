@@ -1,14 +1,26 @@
-class Solution {
-    public int solution(int n) {
-        String a = "";
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
-        while(n > 0){
-            a = (n % 3) + a;
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        while (n != 0) {
+            int value = n % 3;
+            queue.offer(value);
             n /= 3;
         }
-        a = new StringBuilder(a).reverse().toString();
 
+        while (!queue.isEmpty()) {
+            int pop = queue.poll();
+            answer *= 3;
+            answer += pop;
+        }
 
-        return Integer.parseInt(a,3);
+        return answer;
     }
+
 }
