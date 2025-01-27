@@ -1,20 +1,23 @@
 class Solution {
     public int solution(int n) {
-        int answer = n - 1; // 1 제외
-        
-        for (int i = 2; i <= n; i++) {
-            int cnt = 0;
-            
-            for (int j = 2; j <= i; j++) {
-                if (i % j == 0) {
-                    cnt++;
-                }
-            }
-            
-            if (cnt == 1) {
-                answer--;
+        int count = 0;
+
+        for(int i = 4; i <= n; i++) {
+            if(isComposite(i)) {
+                count++;
             }
         }
-        return answer;
+
+        return count;
+    }
+
+    boolean isComposite(int number) {
+        for(int i = 2; i < number / 2 + 1; i++) {
+            if(number % i == 0) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
