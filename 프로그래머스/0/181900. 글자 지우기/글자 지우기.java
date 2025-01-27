@@ -2,15 +2,12 @@ import java.util.*;
 
 class Solution {
     public String solution(String my_string, int[] indices) {
-        String[] str = my_string.split("");
+        StringBuilder sb = new StringBuilder(my_string);
         
-        for (int i = 0; i < indices.length; i++) {
-            int target = indices[i];
-            
-            str[target] = "";
+        for (int i : indices) {
+            sb.setCharAt(i, ' ');
         }
         
-        
-        return String.join("", str);
+        return sb.toString().replace(" ", "");
     }
 }
