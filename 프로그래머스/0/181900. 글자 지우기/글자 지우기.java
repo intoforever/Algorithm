@@ -14,10 +14,6 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         
         for (int i = 0; i < str.length; i++) {
-            if ("".equals(str[i])) {
-                continue;
-            }
-            
             sb.append(str[i]);
         }
         
