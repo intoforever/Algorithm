@@ -6,7 +6,6 @@ class Solution {
             }
             
             if (date1[i] < date2[i]) {
-                System.out.printf("date1: %d, date2: %d\n", date1[i], date2[i]);
                 return 1;
             }
         }
