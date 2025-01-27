@@ -10,6 +10,8 @@ class Solution {
             for (int j = 0; j < board[i].length; j++) {
                 if (i + j <= k) {
                     answer += board[i][j];
+                } else {
+                    break;
                 }
             }
         }
