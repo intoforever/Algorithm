@@ -7,13 +7,8 @@ class Solution {
             int w = Math.max(sizes[i][0], sizes[i][1]);
             int h = Math.min(sizes[i][0], sizes[i][1]);
             
-            if (wMax < w) {
-                wMax = w;
-            }
-            
-            if (hMax < h) {
-                hMax = h;
-            }
+            wMax = Math.max(wMax, w);
+            hMax = Math.max(hMax, h);
         }
         
         return wMax * hMax;
