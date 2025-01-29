@@ -1,15 +1,28 @@
+import java.util.*;
+
 class Solution {
     public String solution(String letter) {
-        String answer = "";
-        String[] morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
-        String[] word = letter.split(" ");
-
-        for(int i=0;i<word.length;i++){
-            for(int j=0;j<morse.length;j++){
-                if(word[i].equals(morse[j])) answer+=(char)(j+97);
-            }
+        String[] arr = letter.split(" ");
+        StringBuilder sb = new StringBuilder();
+        Map<String, Character> map = new HashMap<>();
+        String[] morse = {
+            ".-","-...","-.-.","-.."
+            ,".","..-.","--.","...."
+            ,"..",".---","-.-",".-.."
+            ,"--","-.","---",".--."
+            ,"--.-",".-.","...","-"
+            ,"..-","...-",".--","-..-"
+            ,"-.--","--.."
+        };
+        
+        for (int i = 0; i < morse.length; i++) {
+            map.put(morse[i], (char) (97 + i));
         }
-
-        return answer;
+        
+        for (String a : arr) {
+            sb.append(map.get(a));
+        }
+        
+        return sb.toString();
     }
 }
