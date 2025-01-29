@@ -4,18 +4,15 @@ class Solution {
         int hMax = 0;
         
         for (int i = 0; i < sizes.length; i++) {
-            if (sizes[i][0] < sizes[i][1]) {
-                int temp = sizes[i][0];
-                sizes[i][0] = sizes[i][1];
-                sizes[i][1] = temp;
+            int w = Math.max(sizes[i][0], sizes[i][1]);
+            int h = Math.min(sizes[i][0], sizes[i][1]);
+            
+            if (wMax < w) {
+                wMax = w;
             }
             
-            if (wMax < sizes[i][0]) {
-                wMax = sizes[i][0];
-            }
-            
-            if (hMax < sizes[i][1]) {
-                hMax = sizes[i][1];
+            if (hMax < h) {
+                hMax = h;
             }
         }
         
