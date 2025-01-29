@@ -2,13 +2,12 @@ class Solution {
     public int solution(int a, int d, boolean[] included) {
         int answer = 0;
         
-        for (int i = 0; i < included.length; i++, a += d) {
+        for (int i = 0; i < included.length; i++) {
             if (!included[i]) {
                 continue;
             }
-            answer += a;
+            answer += a + (d * i);
         }
-        
         
         return answer;
     }
