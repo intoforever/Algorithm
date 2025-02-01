@@ -2,18 +2,10 @@ import java.util.*;
 
 class Solution {
     public String solution(String my_string) {
-        StringBuilder sb = new StringBuilder();
-        Map<Character, Boolean> map = new HashMap<>();
+        String[] answer = my_string.split("");
         
-        for (char c : my_string.toCharArray()) {
-            if (map.containsKey(c)) {
-                continue;
-            }
-            
-            map.put(c, true);
-            sb.append(c);
-        }
-        
-        return sb.toString();
+        Set<String> set = new LinkedHashSet<String>(Arrays.asList(answer));
+
+        return String.join("", set);
     }
 }
