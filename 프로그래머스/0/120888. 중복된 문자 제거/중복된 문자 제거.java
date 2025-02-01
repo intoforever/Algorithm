@@ -1,11 +1,13 @@
-import java.util.*;
-
 class Solution {
     public String solution(String my_string) {
-        String[] answer = my_string.split("");
-        
-        Set<String> set = new LinkedHashSet<String>(Arrays.asList(answer));
+        String answer = "";
 
-        return String.join("", set);
+        for (int i = 0; i < my_string.length(); i++) {
+            if(i == my_string.indexOf(my_string.charAt(i))) {
+                answer += my_string.charAt(i);
+            }
+        }
+
+        return answer;
     }
 }
