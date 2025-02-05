@@ -1,14 +1,10 @@
 class Solution {
     public String solution(String myString, String pat) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         
-        for (int i = myString.length(); i >= 0; i--) {
-            if (myString.substring(0, i).endsWith(pat)) {
-                answer = myString.substring(0, i);
-                break;
-            }
-        }
+        sb.append(myString.substring(0, myString.lastIndexOf(pat)));
+        sb.append(pat);
         
-        return answer;
+        return sb.toString();
     }
 }
