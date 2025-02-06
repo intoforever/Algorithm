@@ -8,10 +8,8 @@ class Solution {
             int i = commands[x][0];
             int j = commands[x][1];
             int k = commands[x][2];
-            int len = j - i + 1;
             
-            int[] newArr = new int[len];
-            System.arraycopy(array, i - 1, newArr, 0, len);
+            int[] newArr = Arrays.copyOfRange(array, i - 1, j);
             Arrays.sort(newArr);
             
             answer[x] = newArr[k - 1];
