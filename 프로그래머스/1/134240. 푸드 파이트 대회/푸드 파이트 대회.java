@@ -5,10 +5,6 @@ class Solution {
         for (int i = 1; i < food.length; i++) {
             int foodNum = food[i];
             
-            if (foodNum < 2) {
-                continue;
-            }
-            
             for (int j = 0; j < foodNum / 2; j++) {
                 sb.append(i);
             }
