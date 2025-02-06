@@ -2,9 +2,10 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        int[] answer = new int[commands.length];
+        int len = commands.length;
+        int[] answer = new int[len];
         
-        for (int x = 0; x < commands.length; x++) {
+        for (int x = 0; x < len; x++) {
             int i = commands[x][0];
             int j = commands[x][1];
             int k = commands[x][2];
