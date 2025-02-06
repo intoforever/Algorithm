@@ -14,13 +14,10 @@ class Solution {
             }
         }
         
-        String one = sb.toString();
-        String two = sb.reverse().toString();
-        
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(one);
+        sb2.append(sb.toString());
         sb2.append(0);
-        sb2.append(two);
+        sb2.append(sb.reverse().toString());
         
         return sb2.toString();
     }
