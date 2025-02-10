@@ -3,32 +3,17 @@ import java.util.*;
 class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
+        StringBuilder sb = new StringBuilder();
+        sb.append("%");
+        sb.append(n);
+        sb.append("s");
         
         for (int i = 0; i < n; i++) {
-            Stack<String> stack = new Stack<>();
-            int enc1 = arr1[i];
-            int enc2 = arr2[i];
+            String dec = String.format(sb.toString(), Integer.toBinaryString(arr1[i] | arr2[i])).replace(' ', '0');
+            dec = dec.replaceAll("0", " ");
+            dec = dec.replaceAll("1", "#");
             
-            for (int j = 0; j < n; j++) {
-                String dec = "#";
-                
-                if (enc1 % 2 == 0 && enc2 % 2 == 0) {
-                    dec = " ";
-                }
-                
-                enc1 /= 2;
-                enc2 /= 2;
-                
-                stack.push(dec);
-            }
-            
-            StringBuilder sb = new StringBuilder();
-            
-            for (int k = 0; k < n; k++) {
-                sb.append(stack.pop());
-            }
-            
-            answer[i] = sb.toString();
+            answer[i] = dec;
         }
         
         return answer;
