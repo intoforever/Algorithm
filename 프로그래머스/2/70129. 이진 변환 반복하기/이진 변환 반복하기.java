@@ -1,29 +1,18 @@
 class Solution {
     public int[] solution(String s) {
-        StringBuilder sb = new StringBuilder();
         int[] answer = new int[2];
-        int len = s.length();
-        int turn = 0;
-        int cnt = 0;
+        int temp;
         
-        while (!"1".equals(s)) {
-            sb.setLength(0);
+        while( !s.equals("1") ) {
+            answer[1] += s.length();
+            s = s.replaceAll("0", "");
+            temp = s.length();
+            s = Integer.toBinaryString(temp);
             
-            for (char c : s.toCharArray()) {
-                if (c == '0') {
-                    cnt++;
-                    continue;
-                }
-                sb.append(c);
-            }
-            
-            s = Integer.toBinaryString(sb.length());
-            turn++;
+            answer[0]++;
+            answer[1] -= temp;
         }
-
-        answer[0] = turn;
-        answer[1] = cnt;
         
-        return answer;
+        return answer;  
     }
 }
