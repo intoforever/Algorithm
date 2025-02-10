@@ -7,12 +7,6 @@ class Solution {
         Arrays.sort(a);
         Arrays.sort(b);
         
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) {
-                return 0;
-            }
-        }
-        
-        return 1;
+        return new String(a).equals(new String(b)) ? 1 :0;
     }
 }
