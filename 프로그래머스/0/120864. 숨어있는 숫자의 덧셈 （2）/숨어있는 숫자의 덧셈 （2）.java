@@ -4,9 +4,7 @@ class Solution {
         String[] arr = my_string.replaceAll("[A-Za-z]", " ").split(" ");
         
         for (String a : arr) {
-            a = a.trim();
-            
-            if ("".equals(a)) {
+            if ("".equals(a.trim())) {
                 continue;
             }
             
