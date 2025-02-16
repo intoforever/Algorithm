@@ -2,16 +2,18 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        int answer = 0;
+       int answer = 0;
         
-        for (int a : array) {
-            sb.append(a);
+        for(int a : array){
+            while(a != 0){
+                if(a % 10 == 7){
+                    answer++;
+                }
+                
+                a /= 10;
+            }
         }
         
-        String str = sb.toString();
-        str = str.replaceAll("[0-68-9]", "");
-        
-        return str.length();
+        return answer;
     }
 }
