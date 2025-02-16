@@ -2,22 +2,17 @@ import java.util.*;
 
 class Solution {
     public String solution(String s) {
-        String[] arr = s.split("");
-        Map<String, Integer> map = new LinkedHashMap<>();
+        int[] arr = new int[26];
         StringBuilder sb = new StringBuilder();
         
-        Arrays.sort(arr);
-        
-        for (String a : arr) {
-            map.put(a, map.getOrDefault(a, 0) + 1);
+        for (char c : s.toCharArray()) {
+            arr[c - 'a']++;
         }
         
-        for (String key : map.keySet()) {
-            if (map.get(key) > 1) {
-                continue;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                sb.append((char) (i + 'a'));
             }
-            
-            sb.append(key);
         }
         
         return sb.toString();
