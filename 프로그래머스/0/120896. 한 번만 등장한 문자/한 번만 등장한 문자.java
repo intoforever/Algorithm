@@ -13,8 +13,6 @@ class Solution {
         }
         
         for (String key : map.keySet()) {
-            System.out.println(key + " " + map.get(key));
-            
             if (map.get(key) > 1) {
                 continue;
             }
