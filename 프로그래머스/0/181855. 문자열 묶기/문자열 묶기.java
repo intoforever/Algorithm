@@ -2,14 +2,17 @@ import java.util.*;
 
 class Solution {
     public int solution(String[] strArr) {
-        int[] arr = new int[30];
-        
-        for (String s : strArr) {
-            arr[s.length() - 1]++;
+        int answer = 0;
+        int[] lengArr = new int[31];
+
+        for(int i=0; i<strArr.length; i++) {
+            lengArr[strArr[i].length()]++;
         }
-        
-        Arrays.sort(arr);
-        
-        return arr[arr.length - 1];
+
+        for(int i=0; i<=30; i++) {
+            answer = Math.max(answer, lengArr[i]);
+        }
+
+        return answer;
     }
 }
