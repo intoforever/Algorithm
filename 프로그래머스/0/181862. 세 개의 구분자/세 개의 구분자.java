@@ -1,12 +1,11 @@
+import java.util.*;
+
 class Solution {
     public String[] solution(String myStr) {
-        myStr = myStr.replaceAll("[abc]", " ").trim();
-        String[] answer = {"EMPTY"};
-        
-        if (myStr.length() != 0) {
-            answer = myStr.split("\\s+");
-        }
-        
-        return answer;
+        myStr = myStr.replaceAll("[a|b|c]+", ",");
+        myStr = myStr.charAt(0) == ',' ? myStr.substring(1) : myStr;
+        myStr = myStr.equals("") ? "EMPTY" : myStr;
+
+        return myStr.split("[,]");
     }
 }
