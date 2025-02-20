@@ -11,17 +11,4 @@ class Solution {
             }
         }
     }
-    
-    private int cntBinaryOne(int val) {
-        int cnt = 0;
-        char[] arr = Integer.toBinaryString(val).toCharArray();
-        
-        for (char c : arr) {
-            if (c - '0' == 1) {
-                cnt++;
-            }
-        }
-        
-        return cnt;
-    }
 }
