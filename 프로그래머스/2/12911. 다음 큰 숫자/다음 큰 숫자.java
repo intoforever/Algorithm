@@ -1,11 +1,10 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        int binaryOneCnt = cntBinaryOne(n);
+        int binaryOneCnt = Integer.bitCount(n);
         int binaryOneCntForTarget = 0;
         
         while (true) {
-            binaryOneCntForTarget = cntBinaryOne(++n);
+            binaryOneCntForTarget = Integer.bitCount(++n);
             
             if (binaryOneCnt == binaryOneCntForTarget) {
                 return n;
