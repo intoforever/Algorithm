@@ -1,17 +1,25 @@
+import java.util.*;
+
 class Solution {
     public int solution(String s) {
-        int answer = 0;
-        String[] arr = s.split(" ");
+        int sum = 0;
+        StringTokenizer st = new StringTokenizer(s, " ");
+        Deque<Integer> stack = new ArrayDeque<>();
         
-        for (int i = 0; i < arr.length; i++) {
-            if ("Z".equals(arr[i])) {
-                answer -= Integer.parseInt(arr[i - 1]);
-                continue;
-            }
+        while(st.hasMoreTokens()){
+            String token = st.nextToken();
             
-            answer += Integer.parseInt(arr[i]);
+            if(token.equals("Z")){
+                if(!stack.isEmpty()){
+                    sum -= stack.pollLast();
+                }
+            } else {
+                int num = Integer.parseInt(token);
+                stack.offerLast(num);
+                sum += num;
+            }
         }
         
-        return answer;
+        return sum;
     }
 }
