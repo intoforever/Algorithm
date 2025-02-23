@@ -6,11 +6,14 @@ class Solution {
         Map<String, Integer> menuMap = new HashMap<>();
         menuMap.put("americano", 4500);
         menuMap.put("cafelatte", 5000);
-        menuMap.put("anything", 4500);
         
         for (String o : order) {
-            o = o.replaceAll("ice", "");
-            o = o.replaceAll("hot", "");
+            o = o.replace("ice", "");
+            o = o.replace("hot", "");
+            
+            if ("anything".equals(o)) {
+                o = "americano";
+            }
             
             answer += menuMap.getOrDefault(o, 0);
         }
