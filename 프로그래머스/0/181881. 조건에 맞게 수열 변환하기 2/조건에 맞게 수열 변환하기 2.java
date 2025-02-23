@@ -1,51 +1,28 @@
 class Solution {
     public int solution(int[] arr) {
-        MyArr myArr = new MyArr(arr);
-        int answer = 0;
+       int count = 0;
         
-        while (!myArr.convertArr()) {
-            answer++;
-        }
-        
-        return answer;
-    }
-}
-
-class MyArr {
-    int[] arr;
-    
-    public MyArr(int[] arr) {
-        this.arr = arr;
-    }
-    
-    public boolean convertArr() {
-        int[] convertedArr = new int[arr.length];
-        
-        for (int i = 0; i < arr.length; i++) {
-            int num = arr[i];
+        while (true) {
+            boolean changed = false;
             
-            if (num >= 50 && num % 2 == 0) {
-                convertedArr[i] = num / 2;
-            } else if (num < 50 && num % 2 == 1) {
-                convertedArr[i] = (num * 2) + 1;
-            } else {
-                convertedArr[i] = num;
+            for (int i = 0; i < arr.length; i++) {
+                int original = arr[i];
+                
+                if (original >= 50 && original % 2 == 0) {
+                    arr[i] = original / 2;
+                } else if (original < 50 && original % 2 == 1) {
+                    arr[i] = original * 2 + 1;
+                }
+                
+                if (arr[i] != original) {
+                    changed = true;
+                }
             }
+            
+            if (!changed) break;
+            count++;
         }
         
-        boolean result = checkArr(convertedArr);
-        arr = convertedArr;
-        
-        return result;
-    }
-    
-    private boolean checkArr(int[] convertedArr) {
-        for (int i = 0; i < convertedArr.length; i++) {
-            if (arr[i] != convertedArr[i]) {
-                return false;
-            }
-        }
-        
-        return true;
+        return count;
     }
 }
