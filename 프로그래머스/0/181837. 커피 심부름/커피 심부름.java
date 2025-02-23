@@ -3,19 +3,15 @@ import java.util.*;
 class Solution {
     public int solution(String[] order) {
         int answer = 0;
-        Map<String, Integer> menuMap = new HashMap<>();
-        menuMap.put("americano", 4500);
-        menuMap.put("cafelatte", 5000);
         
         for (String o : order) {
-            o = o.replace("ice", "");
-            o = o.replace("hot", "");
+            int val = 5000;
             
-            if ("anything".equals(o)) {
-                o = "americano";
+            if (o.contains("americano") || "anything".equals(o)) {
+                val = 4500;
             }
             
-            answer += menuMap.getOrDefault(o, 0);
+            answer += val;
         }
         
         return answer;
