@@ -2,36 +2,16 @@ import java.util.*;
 
 class Solution {
     public int solution(int n, int m, int[] section) {
-        int answer = 0;
-        Deque<Integer> q = new ArrayDeque<>();
+        int roller = section[0];
+        int cnt = 1;
         
-        for (int s : section) {
-            q.offer(s);
-        }
-        
-        while (null != q.peek()) {
-            answer++;
-            Integer poll = q.poll();
-            Integer peek = q.peek();
-            
-            if (null == peek) {
-                break;
-            }
-            
-            if (m == 1) {
-                continue;
-            }
-            
-            int rollerEnd = (poll - 1) + m;
-            
-            if (rollerEnd >= peek) {
-                while (null != peek && rollerEnd >= peek) {
-                    q.poll();
-                    peek = q.peek();
-                }
+        for(int i = 1; i < section.length; i++) {
+            if(roller + m - 1 < section[i]) {
+                cnt++;
+                roller = section[i];
             }
         }
         
-        return answer;
+        return cnt;
     }
 }
