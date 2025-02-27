@@ -5,13 +5,11 @@ class Solution {
         Stack<Integer> stk = new Stack<>();
         
         for (int a : arr) {
-            if (stk.size() == 0) {
+            if (stk.size() == 0 || stk.peek() != a) {
                 stk.push(a);
-            } else if (stk.peek() == a) {
-                stk.pop();
-            } else {
-                stk.push(a);
+                continue;
             }
+            stk.pop();
         }
         
         if (stk.size() == 0) {
