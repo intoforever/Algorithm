@@ -3,18 +3,17 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] arr, int[][] queries) {
         int[] answer = new int[queries.length];
-        
-        for (int i = 0; i < queries.length; i++) {
-            int s = queries[i][0];
-            int e = queries[i][1];
-            int k = queries[i][2];
-            int val = -1;
-            for (int j = s; j <= e; j++) {
-                if (arr[j] > k && (val == -1 || arr[j] < val)) {
-                    val = arr[j];
+        Arrays.fill(answer, -1);
+
+        for (int idx = 0; idx < queries.length; idx++) {
+            int[] query = queries[idx];
+            int s = query[0], e = query[1], k = query[2];
+
+            for (int i = s; i <= e; i++) {
+                if (k < arr[i]) {
+                    answer[idx] = answer[idx] == -1 ? arr[i] : Math.min(answer[idx], arr[i]);
                 }
             }
-            answer[i] = val;
         }
         
         return answer;
