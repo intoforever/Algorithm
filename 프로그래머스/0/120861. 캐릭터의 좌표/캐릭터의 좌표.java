@@ -1,20 +1,64 @@
 class Solution {
     public int[] solution(String[] keyinput, int[] board) {
-        int[] answer = new int[2];
-        int maxX = board[0] / 2, maxY = board[1] / 2;
+        MyGame mg = new MyGame(board);
         
         for (String key : keyinput) {
             if ("right".equals(key)) {
-                answer[0] += Math.abs(answer[0] + 1) > maxX ? 0 : 1;
+                mg.moveRight();
             } else if ("left".equals(key)) {
-                answer[0] += Math.abs(answer[0] - 1) > maxX ? 0 : -1;
+                mg.moveLeft();
             } else if ("up".equals(key)) {
-                answer[1] += Math.abs(answer[1] + 1) > maxY ? 0 : 1;
+                mg.moveUp();
             } else if ("down".equals(key)) {
-                answer[1] += Math.abs(answer[1] - 1) > maxY ? 0 : -1;
+                mg.moveDown();
             }
         }
         
-        return answer;
+        return mg.getCurCoordinate();
+    }
+    
+}
+
+class MyGame {
+    private int x;
+    private int y;
+    private int maxX;
+    private int maxY;
+    
+    public MyGame (int[] board) {
+        this.maxX = board[0] / 2;
+        this.maxY = board[1] / 2;
+    }
+    
+    public void moveUp () {
+        if (y + 1 > maxY) {
+            return ;
+        }
+        y++;
+    }
+    
+    public void moveDown () {
+        if ((y - 1) * -1 > maxY) {
+            return;
+        }
+        y--;
+    }
+    
+    public void moveRight() {
+        if (x + 1 > maxX) {
+            return;
+        }
+        x++;
+    }
+    
+    public void moveLeft() {
+        if ((x - 1) * -1 > maxX) {
+            return;
+        }
+        x--;
+    }
+    
+    public int[] getCurCoordinate () {
+        return new int[]{x, y};
     }
 }
