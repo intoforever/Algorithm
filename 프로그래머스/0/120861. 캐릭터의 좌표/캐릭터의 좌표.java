@@ -31,30 +31,22 @@ class MyGame {
     }
     
     public void moveUp () {
-        if (y + 1 > maxY) {
-            return ;
-        }
+        if (y + 1 > maxY) { return; }
         y++;
     }
     
     public void moveDown () {
-        if ((y - 1) * -1 > maxY) {
-            return;
-        }
+        if ((y - 1) * -1 > maxY) { return; }
         y--;
     }
     
     public void moveRight() {
-        if (x + 1 > maxX) {
-            return;
-        }
+        if (x + 1 > maxX) { return; }
         x++;
     }
     
     public void moveLeft() {
-        if ((x - 1) * -1 > maxX) {
-            return;
-        }
+        if ((x - 1) * -1 > maxX) { return; }
         x--;
     }
     
