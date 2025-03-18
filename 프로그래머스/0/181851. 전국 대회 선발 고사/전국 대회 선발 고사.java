@@ -12,12 +12,18 @@ class Solution {
         Arrays.sort(rank);
         int delimiter = 10000;
         int idx;
+        int cnt = 1;
         
         for (int i = 0; i < rank.length; i++) {
             idx = map.get(rank[i]);
             if (attendance[idx]) {
                 answer += idx * delimiter;
                 delimiter /= 100;
+                cnt++;
+            }
+            
+            if (cnt > 3) {
+                break;
             }
         }
         
