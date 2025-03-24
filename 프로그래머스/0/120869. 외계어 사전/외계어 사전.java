@@ -1,18 +1,12 @@
 class Solution {
     public int solution(String[] spell, String[] dic) {
-        int cnt = spell.length;
-        for (String d : dic) {
-            cnt = spell.length;
-            for (String s : spell) {
-                if (d.contains(s)) {
-                    cnt--;
-                }
+       for(int i=0;i<dic.length;i++){
+            int answer = 0;
+            for(int j=0;j<spell.length;j++){
+                if(dic[i].contains(spell[j])) answer ++;
             }
-            if (cnt == 0) {
-                return 1;
-            }
+            if(answer==spell.length) return 1;
         }
-        
         return 2;
     }
 }
