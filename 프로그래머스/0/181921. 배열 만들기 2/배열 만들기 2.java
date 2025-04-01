@@ -2,19 +2,14 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int l, int r) {
-        List<Integer> list = new ArrayList<>();
-        for (; l <= r; l++) {
-            String val = ("" + l).replace("0", "").replace("5", "");
-            if ("".equals(val)) {
-                list.add(l);
-            }
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 1; i < 64; i++) {
+            int num = Integer.parseInt(Integer.toBinaryString(i)) * 5;
+            if (l <= num && num <= r)
+                list.add(num);
         }
-        int[] answer;
-        if (list.size() > 0) {
-            answer = list.stream().mapToInt(Integer::intValue).toArray();
-        } else {
-            answer = new int[]{-1};
-        }
-        return answer;
+
+        return list.isEmpty() ? new int[] { -1 } : list.stream().mapToInt(i -> i).toArray();
     }
 }
