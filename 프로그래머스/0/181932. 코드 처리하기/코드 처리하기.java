@@ -9,10 +9,10 @@ class Solution {
                 mode = !mode;
                 continue;
             }
-            c = (!mode && i % 2 == 0) || (mode  && i % 2 == 1) ? c : '0';
-            sb.append(c);
+            if ((!mode && i % 2 == 0) || (mode  && i % 2 == 1)) {
+                sb.append(c);    
+            }
         }
-        String answer = sb.toString().replace("0", "");
-        return answer.isEmpty() ? "EMPTY" : answer;
+        return sb.toString().isEmpty() ? "EMPTY" : sb.toString();
     }
 }
