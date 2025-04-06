@@ -1,15 +1,15 @@
 class Solution {
     public String solution(String code) {
         StringBuilder sb = new StringBuilder();
-        int mode = 0;
+        boolean mode = false;
         
         for (int i = 0; i < code.length(); i++) {
             char c = code.charAt(i);
             if (c == '1') {
-                mode = mode == 0 ? 1 : 0;
+                mode = !mode;
                 continue;
             }
-            if ((mode == 0 && i % 2 == mode) || (mode == 1 && i % 2 == mode)) {
+            if ((!mode && i % 2 == 0) || (mode && i % 2 == 1)) {
                 sb.append(c);    
             }
         }
