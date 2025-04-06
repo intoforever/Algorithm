@@ -1,19 +1,18 @@
 class Solution {
     public String solution(String code) {
-        String[] strArr = code.split("");
+        StringBuilder sb = new StringBuilder();
         boolean mode = false;
-        StringBuilder answer = new StringBuilder();
         
-        for (int i = 0; i < strArr.length; i++) {
-            String s = strArr[i];
-            if ("1".equals(s)) {
+        for (int i = 0; i < code.length(); i++) {
+            char c = code.charAt(i);
+            if (c == '1') {
                 mode = !mode;
                 continue;
             }
-            s = (!mode && i % 2 == 0) || (mode  && i % 2 == 1) ? s : "";
-            answer.append(s);
+            c = (!mode && i % 2 == 0) || (mode  && i % 2 == 1) ? c : '0';
+            sb.append(c);
         }
-        
-        return answer.toString().isEmpty() ? "EMPTY" : answer.toString();
+        String answer = sb.toString().replace("0", "");
+        return answer.isEmpty() ? "EMPTY" : answer;
     }
 }
