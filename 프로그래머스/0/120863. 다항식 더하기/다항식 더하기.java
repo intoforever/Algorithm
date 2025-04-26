@@ -19,6 +19,6 @@ class Solution {
             return xNum == 1 ? "x" : xNum + "x";
         }
         
-        return (xNum == 1 ? "x + " : xNum + "x + ") + num;
+        return (xNum == 1 ? "x" : xNum + "x") + " + " + num;
     }
 }
