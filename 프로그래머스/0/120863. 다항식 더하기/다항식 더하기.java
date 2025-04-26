@@ -4,37 +4,21 @@ class Solution {
     public String solution(String polynomial) {
         int xNum = 0, num = 0;
         
-        for (String s : polynomial.replace(" ", "").split("\\+")) {
-            if ("x".equals(s)) {
-                s = "1x";
-            }
+        for (String s : polynomial.split(" \\+ ")) {
             if (s.contains("x")) {
-                s = s.replace("x", "");
-                xNum += s.isEmpty() ? 1 : Integer.parseInt(s);
+                xNum += "x".equals(s) ? 1 : Integer.parseInt(s.replace("x", ""));
             } else {
                 num += Integer.parseInt(s);
             }
         }
         
-        return formatting(xNum, num);
-    }
-    
-    public String formatting(int xNum, int num) {
-        StringBuilder sb = new StringBuilder();
-        
-        if (xNum > 1) {
-            sb.append(xNum);
+        if (xNum == 0) {
+            return String.valueOf(num);
         }
-        if (xNum > 0) {
-            sb.append("x");
-        }
-        if (xNum > 0 && num > 0) {
-            sb.append(" + ");
-        }
-        if (num > 0) {
-            sb.append(num);
+        if (num == 0) {
+            return xNum == 1 ? "x" : xNum + "x";
         }
         
-        return sb.toString();
+        return (xNum == 1) ? ("x + " + num) : (xNum + "x + " + num);
     }
 }
