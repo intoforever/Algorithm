@@ -2,25 +2,28 @@ import java.util.*;
 
 class Solution {
     public int solution(String s) {
-        int answer = 0, cntX = 0, cntY = 0;
-        String[] arr = s.split("");
-        
-        for (int i = 0; i < arr.length; i++) {
-            String x = arr[0];
-            if (x.equals(arr[i])) {
-                cntX++;
+        char[] arr = s.toCharArray();
+        int answer = 0, same = 0, diff = 0, first = 0, left = arr.length;
+        for (char c : arr) {
+            if (first == 0) {
+                first = c;
+                same++;
+            } else if (first == c) {
+                same++;
             } else {
-                cntY++;
+                diff++;
             }
 
-            if (cntX == cntY) {
-                arr = Arrays.copyOfRange(arr, i + 1, arr.length);
-                i = -1;
+            if (same == diff) {
                 answer++;
+                first = 0;
+                left -= (same + diff);
+                same = 0;
+                diff = 0;
             }
         }
         
-        if (arr.length > 0) {
+        if (left > 0) {
             answer++;
         }
         
