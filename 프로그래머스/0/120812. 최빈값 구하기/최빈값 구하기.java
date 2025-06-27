@@ -15,12 +15,14 @@ class Solution {
         }
 
         // K 확인
-        List<Integer> modes = new ArrayList<>();
+        int count = 0;
+        int result = -1;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() == max) {
-                modes.add(entry.getKey());
+                count++;
+                result = entry.getKey();
             }
         }
-        return modes.size() == 1 ? modes.get(0) : -1;
+        return count == 1 ? result : -1;
     }
 }
