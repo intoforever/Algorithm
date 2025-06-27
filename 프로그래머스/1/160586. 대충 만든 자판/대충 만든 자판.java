@@ -2,42 +2,47 @@ import java.util.*;
 
 class Solution {
     public int[] solution(String[] keymap, String[] targets) {
-        // 초기화
-        Map<String, Integer> map = new HashMap<>();
-        for (String key : keymap) {
-            updateKeys(key, map);
-        }
+        Map<Character, Integer> charToMinPress = buildCharacterMap(keymap);
         
-        // targets 확인
-        int[] answer = new int[targets.length];
+        int[] result = new int[targets.length];
         for (int i = 0; i < targets.length; i++) {
-            String[] target = targets[i].split("");
-            answer[i] = getPressCount(target, map);
+            result[i] = calculatePressCount(targets[i], charToMinPress);
         }
         
-        return answer;
+        return result;
     }
     
-    private void updateKeys(String _keys, Map<String, Integer> map) {
-        String[] keys = _keys.split("");
-        for (int i = 0; i < keys.length; i++) {
-            String key = keys[i];
-            int press = i + 1;
-            if (!map.containsKey(key) || press < map.get(key)) {
-                map.put(key, press);
+    private Map<Character, Integer> buildCharacterMap(String[] keymap) {
+        Map<Character, Integer> charToMinPress = new HashMap<>();
+        
+        for (String keys : keymap) {
+            char[] chars = keys.toCharArray();
+            for (int i = 0; i < chars.length; i++) {
+                char ch = chars[i];
+                int pressCount = i + 1;
+                
+                Integer currentMin = charToMinPress.get(ch);
+                if (currentMin == null || pressCount < currentMin) {
+                    charToMinPress.put(ch, pressCount);
+                }
             }
         }
+        
+        return charToMinPress;
     }
     
-    private int getPressCount(String[] keys, Map<String, Integer> map) {
-        int cnt = 0;
-        for (String key : keys) {
-            if (!map.containsKey(key)) {
-                cnt = -1;
-                break;
+    private int calculatePressCount(String target, Map<Character, Integer> charToMinPress) {
+        int totalPress = 0;
+        
+        for (char ch : target.toCharArray()) {
+            Integer pressCount = charToMinPress.get(ch);
+            if (pressCount == null) {
+                return -1;
             }
-            cnt += map.get(key);
+            totalPress += pressCount;
         }
-        return cnt;
+        
+        return totalPress;
     }
+
 }
