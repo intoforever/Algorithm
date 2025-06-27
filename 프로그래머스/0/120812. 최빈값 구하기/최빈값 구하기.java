@@ -15,17 +15,12 @@ class Solution {
         }
 
         // K 확인
-        int answer = -1;
-        for (int key : map.keySet()) {
-            if (answer != -1 && map.get(key) == max) {
-                answer = -1;
-                break;
-            }
-            if (map.get(key) == max) {
-                answer = key;
+        List<Integer> modes = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == max) {
+                modes.add(entry.getKey());
             }
         }
-        
-        return answer;
+        return modes.size() == 1 ? modes.get(0) : -1;
     }
 }
