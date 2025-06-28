@@ -4,8 +4,9 @@ class Solution {
         
         for (int i = 0; i < quiz.length; i++) {
             boolean isPlus = true, isOperatorEnd = false;
-            String q = quiz[i];
             int sum = 0, num = 0;
+            String q = quiz[i];
+            
             for (String s : q.split(" ")) {
                 if ("+".equals(s)) {
                     isPlus = true;
@@ -21,11 +22,7 @@ class Solution {
                 }
                 
                 if (!isOperatorEnd) {
-                    if (isPlus) {
-                        sum += num;
-                    } else {
-                        sum -= num;
-                    }
+                    sum += isPlus ? num : num * -1;
                 } else {
                     answer[i] = (sum == num) ? "O" : "X";
                 }
