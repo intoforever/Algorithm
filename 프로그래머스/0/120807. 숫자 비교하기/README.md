@@ -1,10 +1,10 @@
 # [level 0] 숫자 비교하기 - 120807 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120807?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120807?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 33.4 MB, 시간: 0.03 ms
+메모리: 63.9 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 2월 1일 20:45:59
+2025년 06월 30일 23:09:26
 
 ### 문제 설명
 
