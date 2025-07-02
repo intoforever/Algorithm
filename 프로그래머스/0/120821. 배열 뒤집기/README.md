@@ -1,10 +1,10 @@
 # [level 0] 배열 뒤집기 - 120821 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120821?language=kotlin) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120821) 
 
 ### 성능 요약
 
-메모리: 62.1 MB, 시간: 0.02 ms
+메모리: 66.6 MB, 시간: 24.18 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 07월 03일 00:11:37
+2025년 07월 03일 00:13:19
 
 ### 문제 설명
 
