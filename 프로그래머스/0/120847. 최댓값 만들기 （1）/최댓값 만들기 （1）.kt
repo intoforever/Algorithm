@@ -1,7 +1,6 @@
 class Solution {
     fun solution(numbers: IntArray): Int {
-        numbers.sort()
-        val maxIdx = numbers.size - 1
-        return numbers[maxIdx] * numbers[maxIdx - 1]
+        val list = numbers.sorted()
+        return list[list.lastIndex] * list[list.lastIndex - 1]
     }
 }
