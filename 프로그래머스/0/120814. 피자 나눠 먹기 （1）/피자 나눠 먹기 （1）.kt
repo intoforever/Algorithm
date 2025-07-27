@@ -1,3 +1,3 @@
 class Solution {
-    fun solution(n: Int) = Math.ceil(n.toDouble() / 7)
+    fun solution(n: Int) = if (n%7 == 0 && n != 1) n/7 else n/7 + 1
 }
