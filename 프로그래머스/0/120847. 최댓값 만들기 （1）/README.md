@@ -1,10 +1,10 @@
 # [level 0] 최댓값 만들기 (1) - 120847 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120847) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120847?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 74.5 MB, 시간: 0.33 ms
+메모리: 64.3 MB, 시간: 14.83 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 1월 6일 21:27:41
+2025년 07월 28일 00:34:37
 
 ### 문제 설명
 
