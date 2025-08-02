@@ -1,10 +1,10 @@
 # [level 0] 배열 자르기 - 120833 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120833?language=kotlin) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120833) 
 
 ### 성능 요약
 
-메모리: 63.5 MB, 시간: 7.33 ms
+메모리: 65.4 MB, 시간: 15.30 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 08월 02일 22:44:19
+2025년 08월 02일 22:45:13
 
 ### 문제 설명
 
